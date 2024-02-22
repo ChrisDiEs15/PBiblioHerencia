@@ -6,6 +6,7 @@ package prestamosbiblio;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 /**
  *
@@ -29,13 +30,19 @@ public class PrestamosBiblio {
         switch (opcionIn) {
 
             case 1 -> {
-                System.out.println("Cuantos alumnos quiere registar?");
-                int numAlNew = opcion.nextInt();
+
+                Scanner opcionIN = new Scanner(System.in);
+                System.out.println("Cuantos alumnos quiere registrar?");
+                int numAlNew = opcionIN.nextInt();
+                opcionIN.nextLine(); // Consume newline character
+
                 AlumnoTex[] alumnos = new AlumnoTex[numAlNew];
-                /*init list of loans*/
-                List<Prestamo> prestamoIN = null;
+
                 for (int i = 0; i < numAlNew; i++) {
-                    AlumnoTex nuevoAlMat = new AlumnoTex("", 0, "", "", "", prestamoIN, "", "", "", "", "", "", "", "");
+                    // Initialize a new list of loans for each student
+                    List<Prestamo> prestamos = new ArrayList<>();
+
+                    AlumnoTex nuevoAlMat = new AlumnoTex("", 0, "", "", "", prestamos, "", "", "", "", "", "", "", "");
                     System.out.println("Siga las instrucciones a continuación");
                     nuevoAlMat.registrarEstudiante();
 
@@ -55,6 +62,7 @@ public class PrestamosBiblio {
                         // Print additional loan information if needed
                     }
                 }
+
             }
             case 2 -> {
                 /*init academico*/
@@ -71,7 +79,4 @@ public class PrestamosBiblio {
         }
     }
 
-    public void WriteInfo(int numDeRegistros, Object Registros) {
-
-    }
 }
