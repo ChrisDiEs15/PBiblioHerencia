@@ -19,8 +19,8 @@ public class PrestamosBiblio {
         // Bienvenido al programa 
         Scanner opcion = new Scanner(System.in);
         System.out.println("Bienvenido al programa para registrar prestamos de la biblioteca");
-        System.out.println("A continuacion se le pedira dar de alta al usuario como empleado o estudiante");
-        System.out.println("Por favor elija una de las opciones");
+        System.out.println("A continuacion se le pediran la informacion para el prestamo");
+        System.out.println("Por favor elija una de las opciones de prestamo:");
         System.out.println("1.-Estudiantes");
         System.out.println("2.-Academicos");
         int opcionIn = opcion.nextInt();
@@ -32,6 +32,7 @@ public class PrestamosBiblio {
                 int numAlNew = opcion.nextInt();
                 AlumnoTex[] alumnos = new AlumnoTex[numAlNew];
                 for (int i = 0; i < numAlNew; i++) {
+                    
                     AlumnoTex nuevoAlMat = new AlumnoTex("", 0, "", "", "", "", "", "", "", "", "", "", "");
                     System.out.println("Siga las instrucciones a continuación");
                     nuevoAlMat.registrarEstudiante();
