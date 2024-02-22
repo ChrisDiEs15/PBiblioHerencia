@@ -50,8 +50,25 @@ public class AcademicoTex extends MatriculaUaemex {
     }
     
     public void registrarAcademico(){
-    MatriculaUaemex getSupInfo= alta();
-    if(getSupInfo != null){
+        Scanner altaNueva = new Scanner(System.in);
+        
+         System.out.println("A continuacion Inserte los campos requeridos");
+        System.out.println("Nombre");
+        String nombreIn = altaNueva.nextLine();
+        System.out.println("Apellido Paterno");
+        String aPaternoIn = altaNueva.nextLine();
+        System.out.println("Apellido Materno");
+        String aMaternoIn = altaNueva.nextLine();
+        System.out.println("Email");
+        String emailIn = altaNueva.nextLine();
+        System.out.println("Direccion");
+        String direccionIn = altaNueva.nextLine();
+        System.out.println("CURP");
+        String curpIn = altaNueva.nextLine();
+        System.out.println("Telefono");
+        String telefonoIn = altaNueva.nextLine();
+  
+    
     Scanner scanner = new Scanner(System.in);
     System.out.println("Ingrese el numero de empleado:");
         String numEmpleadoIn = scanner.nextLine();
@@ -64,13 +81,21 @@ public class AcademicoTex extends MatriculaUaemex {
         String turnoIn = scanner.nextLine();
         
         /*Setting the info in academico*/
+        setNombre(nombreIn);
+        setaPaterno(aPaternoIn);
+        setaMaterno(aMaternoIn);
+        setEmail(emailIn);
+        setDireccion(direccionIn);
+        setCurp(curpIn);
+        setTelefono(telefonoIn);
         setNumEmpleado(numEmpleadoIn);
         setDepartamento(departamentoIn);
         setTiempoContratado(turnoIn);
-    }
+   
     
     }
     
+    @Override
     public String getAllInformation() {
         StringBuilder builder = new StringBuilder();
         builder.append("Nombre: ").append(getNombre()).append("\n");

@@ -91,49 +91,19 @@ public class MatriculaUaemex {
         this.id = id;
     }
     
-    public MatriculaUaemex alta(){
-        Scanner altaNueva =new Scanner(System.in);
-        System.out.println("A continuacion Inserte los campos requeridos");
-        System.out.println("Nombre");
-        String nombreNuevo = altaNueva.nextLine();
-        System.out.println("Apellido Paterno");
-        String aPaternoNuevo = altaNueva.nextLine();
-        System.out.println("Apellido Materno");
-        String aMaternoNuevo = altaNueva.nextLine();
-        System.out.println("Email");
-        String emailNuevo = altaNueva.nextLine();
-        System.out.println("Direccion");
-        String direccionNuevo = altaNueva.nextLine();
-        System.out.println("CURP");
-        String curpNuevo = altaNueva.nextLine();
-        System.out.println("Telefono");
-        String telefonoNuevo = altaNueva.nextLine();
-        /*Id requires automatically add*/
-        /*Artifact for return an user*/       
-        return new MatriculaUaemex(nombreNuevo, aPaternoNuevo, aMaternoNuevo, emailNuevo, direccionNuevo, curpNuevo, telefonoNuevo, id);
+/*methods may be in Alumno and academico*/
     
-    }
-    
-    public void baja(){
-        Scanner bajaNueva = new Scanner(System.in);
-        System.out.println("Escriba el CURP de la persona que desea dar de baja");
-        /*need to Capitalize?*/
-        String curpBaja = bajaNueva.nextLine();
-        /*Seacrh Curp??*/
-        String busquedaNueva=getCurp();
-    
-    }
-    
-    public void editar(){
-    Scanner editarNuevo=new Scanner(System.in);
-        System.out.println("Escriba el curp de la persona que desea editar");
-        /*need to Capitalize?*/
-        String curpEdicion = editarNuevo.nextLine();
-        /*Seacrh Curp??*/
-        String busquedaEditNueva=getCurp();
-        /*when found via curp shows select options to edit like nombre, etc. */
-        
-    
+    public String getAllInformation() {
+        StringBuilder builder = new StringBuilder();
+        builder.append("Nombre: ").append(getNombre()).append("\n");
+        builder.append("Apellido Paterno: ").append(getaPaterno()).append("\n");
+        builder.append("Apellido Materno: ").append(getaMaterno()).append("\n");
+        builder.append("Email: ").append(getEmail()).append("\n");
+        builder.append("Dirección: ").append(getDireccion()).append("\n");
+        builder.append("CURP: ").append(getCurp()).append("\n");
+        builder.append("Teléfono: ").append(getTelefono()).append("\n");
+        builder.append("ID: ").append(getId()).append("\n");
+        return builder.toString();
     }
     
 }
