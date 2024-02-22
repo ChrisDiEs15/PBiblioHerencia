@@ -52,7 +52,7 @@ public class AcademicoTex extends MatriculaUaemex {
     public void registrarAcademico(){
         Scanner altaNueva = new Scanner(System.in);
         
-         System.out.println("A continuacion Inserte los campos requeridos");
+        System.out.println("A continuacion Inserte los campos requeridos");
         System.out.println("Nombre");
         String nombreIn = altaNueva.nextLine();
         System.out.println("Apellido Paterno");
@@ -67,18 +67,13 @@ public class AcademicoTex extends MatriculaUaemex {
         String curpIn = altaNueva.nextLine();
         System.out.println("Telefono");
         String telefonoIn = altaNueva.nextLine();
-  
-    
-    Scanner scanner = new Scanner(System.in);
-    System.out.println("Ingrese el numero de empleado:");
-        String numEmpleadoIn = scanner.nextLine();
-        
+        System.out.println("Ingrese el numero de empleado:");
+        String numEmpleadoIn = altaNueva.nextLine();
         System.out.println("Ingrese el departamento:");
-        String departamentoIn = scanner.nextLine();
-        
+        String departamentoIn = altaNueva.nextLine();
         System.out.println("Ingrese el tiempo contratado:");
-        scanner.nextLine(); // Consume newline character
-        String turnoIn = scanner.nextLine();
+        altaNueva.nextLine(); // Consume newline character
+        String turnoIn = altaNueva.nextLine();
         
         /*Setting the info in academico*/
         setNombre(nombreIn);
@@ -92,9 +87,10 @@ public class AcademicoTex extends MatriculaUaemex {
         setDepartamento(departamentoIn);
         setTiempoContratado(turnoIn);
    
-    
     }
-    
+    /*retrieve information 
+    The principal operations on a StringBuilder are the append and insert methods, which are overloaded so as to accept data of any type. Each effectively converts a given datum to a string and then appends or inserts the characters of that string to the string builder. The append method always adds these characters at the end of the builder; the insert method adds the characters at a specified point.
+ */
     @Override
     public String getAllInformation() {
         StringBuilder builder = new StringBuilder();

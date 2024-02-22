@@ -70,7 +70,6 @@ public class AlumnoTex extends MatriculaUaemex {
     }
 
     public void registrarEstudiante() {
-         Scanner scanner = new Scanner(System.in);
         Scanner altaNueva = new Scanner(System.in);
         
         System.out.println("A continuacion Inserte los campos requeridos");
@@ -88,22 +87,17 @@ public class AlumnoTex extends MatriculaUaemex {
         String curpIn = altaNueva.nextLine();
         System.out.println("Telefono");
         String telefonoIn = altaNueva.nextLine();
-
         System.out.println("Ingrese la matrícula del estudiante:");
-        String matriculaIn = scanner.nextLine();
-
+        String matriculaIn = altaNueva.nextLine();
         System.out.println("Ingrese el semestre:");
-        int semestreIn = scanner.nextInt();
-
+        int semestreIn = altaNueva.nextInt();
         System.out.println("Ingrese la carrera:");
-        scanner.nextLine(); // Consume newline character
-        String carreraIn = scanner.nextLine();
-
+        altaNueva.nextLine(); // Consume newline character
+        String carreraIn = altaNueva.nextLine();
         System.out.println("Ingrese el grupo:");
-        String grupoIn = scanner.nextLine();
-
+        String grupoIn = altaNueva.nextLine();
         System.out.println("Ingrese el tiempo:");
-        String tiempoIn = scanner.nextLine();
+        String tiempoIn = altaNueva.nextLine();
 
         // Set all information
         setNombre(nombreIn);

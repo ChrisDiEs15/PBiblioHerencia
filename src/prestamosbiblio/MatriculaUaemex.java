@@ -3,8 +3,6 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package prestamosbiblio;
-import java.util.Scanner;
-
 
 /**
  *
@@ -92,7 +90,9 @@ public class MatriculaUaemex {
     }
     
 /*methods may be in Alumno and academico*/
-    
+    /*retrieve information 
+    The principal operations on a StringBuilder are the append and insert methods, which are overloaded so as to accept data of any type. Each effectively converts a given datum to a string and then appends or inserts the characters of that string to the string builder. The append method always adds these characters at the end of the builder; the insert method adds the characters at a specified point.
+ */
     public String getAllInformation() {
         StringBuilder builder = new StringBuilder();
         builder.append("Nombre: ").append(getNombre()).append("\n");
