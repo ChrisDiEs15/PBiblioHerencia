@@ -3,7 +3,8 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
 package prestamosbiblio;
-
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
@@ -18,15 +19,23 @@ public class AlumnoTex extends MatriculaUaemex {
     private String carrera;
     private String grupo;
     private String tiempo;
+    
+    /*add loans to students*/
+     private List<Prestamo> prestamo;
 
     /*constructor*/
-    public AlumnoTex(String matricula, int semestre, String carrera, String grupo, String tiempo, String nombre, String aPaterno, String aMaterno, String email, String direccion, String curp, String telefono, String id) {
+    public AlumnoTex(String matricula, int semestre, String carrera, String grupo, String tiempo, List<Prestamo> prestamo, String nombre, String aPaterno, String aMaterno, String email, String direccion, String curp, String telefono, String id) {
         super(nombre, aPaterno, aMaterno, email, direccion, curp, telefono, id);
         this.matricula = matricula;
         this.semestre = semestre;
         this.carrera = carrera;
         this.grupo = grupo;
         this.tiempo = tiempo;
+        this.prestamo = prestamo; // Initialize the list of prestamos
+    }
+
+    public void setPrestamos(List<Prestamo> prestamo) {
+        this.prestamo = prestamo;
     }
 
     public void setMatricula(String matricula) {
@@ -47,6 +56,10 @@ public class AlumnoTex extends MatriculaUaemex {
 
     public void setTiempo(String tiempo) {
         this.tiempo = tiempo;
+    }
+
+    public List<Prestamo> getPrestamos() {
+        return prestamo;
     }
 
     public String getMatricula() {
@@ -71,6 +84,7 @@ public class AlumnoTex extends MatriculaUaemex {
 
     public void registrarEstudiante() {
         Scanner altaNueva = new Scanner(System.in);
+        Scanner prestamosScan = new Scanner(System.in);
         
         System.out.println("A continuacion Inserte los campos requeridos");
         System.out.println("Nombre");
@@ -98,6 +112,14 @@ public class AlumnoTex extends MatriculaUaemex {
         String grupoIn = altaNueva.nextLine();
         System.out.println("Ingrese el tiempo:");
         String tiempoIn = altaNueva.nextLine();
+        /*loans*/
+        System.out.println("¿Cuántos préstamos desea registrar para este estudiante?");
+        int registeredPrestamos =prestamosScan.nextInt();
+        for (int i = 0; i < registeredPrestamos; i++) {
+            Prestamo prestamoIn = new Prestamo("","","","","","","",0,0,0,0);
+            prestamoIn.RegNuPrestamo();
+            setPrestamos(prestamo);
+        }
 
         // Set all information
         setNombre(nombreIn);

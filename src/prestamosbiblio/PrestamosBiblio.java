@@ -4,6 +4,7 @@
  */
 package prestamosbiblio;
 
+import java.util.List;
 import java.util.Scanner;
 
 /**
@@ -31,14 +32,28 @@ public class PrestamosBiblio {
                 System.out.println("Cuantos alumnos quiere registar?");
                 int numAlNew = opcion.nextInt();
                 AlumnoTex[] alumnos = new AlumnoTex[numAlNew];
+                /*init list of loans*/
+                List<Prestamo> prestamoIN = null;
                 for (int i = 0; i < numAlNew; i++) {
-                    
-                    AlumnoTex nuevoAlMat = new AlumnoTex("", 0, "", "", "", "", "", "", "", "", "", "", "");
+                    AlumnoTex nuevoAlMat = new AlumnoTex("", 0, "", "", "", prestamoIN, "", "", "", "", "", "", "", "");
                     System.out.println("Siga las instrucciones a continuación");
                     nuevoAlMat.registrarEstudiante();
 
                     // Add alumno to the array
                     alumnos[i] = nuevoAlMat;
+                }
+
+                for (AlumnoTex alumno : alumnos) {
+                    System.out.println("Información del estudiante registrado:");
+                    System.out.println(alumno.getAllInformation());
+
+                    // Print prestamos
+                    List<Prestamo> prestamos = alumno.getPrestamos();
+                    System.out.println("Prestamos:");
+                    for (Prestamo prestamo : prestamos) {
+                        System.out.println("Fecha Inicio: " + prestamo.getFechaInicio() + ", Fecha Fin: " + prestamo.getFechaFin());
+                        // Print additional loan information if needed
+                    }
                 }
             }
             case 2 -> {
@@ -56,8 +71,7 @@ public class PrestamosBiblio {
         }
     }
 
-    public void WriteInfo(int numDeRegistros, Object Registros ){
-    
-    
+    public void WriteInfo(int numDeRegistros, Object Registros) {
+
     }
 }
