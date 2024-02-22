@@ -9,10 +9,11 @@ package prestamosbiblio;
  * @author Chris
  */
 public class Libro {
-    private String autor, editorial, codBarras, id;
+    private String nombre, autor, editorial, codBarras, id;
     private int numPaginas, volumen, edicion, ano;
     
-    public Libro(String autor, String editorial, String codBarras, String id, int numPaginas, int volumen, int edicion, int ano){
+    public Libro(String nombre,String autor, String editorial, String codBarras, String id, int numPaginas, int volumen, int edicion, int ano){
+       this.nombre=nombre;
        this.autor=autor;
        this.editorial=editorial;
        this.codBarras=codBarras;
@@ -25,6 +26,10 @@ public class Libro {
     }
     
     /*getters*/
+
+    public String getNombre() {
+        return nombre;
+    }
 
     public String getAutor() {
         return autor;
@@ -58,6 +63,10 @@ public class Libro {
         return ano;
     }
 /*setters*/
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
     public void setAutor(String autor) {
         this.autor = autor;
